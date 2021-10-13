@@ -1,4 +1,4 @@
-FROM nginx:alpine AS bazel-slack-inviter-slackin
+FROM nginx:alpine AS chalupa-forwarder
 
 ADD nginx.conf /etc/nginx/nginx.conf
 
