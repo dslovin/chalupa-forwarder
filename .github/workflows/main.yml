@@ -19,10 +19,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    -name: Deploy to Cloud Run
-     uses: google-github-actions/deploy-cloudrun@v0.2.0
-     with:
-      service: ${{ env.SERVICE }}
-      image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
-      region: ${{ env.REGION }}
-      credentials: ${{ secrets.GCP_SA_KEY }}
+    - name: Deploy to Cloud Run
+      uses: google-github-actions/deploy-cloudrun@v0.2.0
+      with:
+       service: ${{ env.SERVICE }}
+       image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
+       region: ${{ env.REGION }}
+       credentials: ${{ secrets.GCP_SA_KEY }}
