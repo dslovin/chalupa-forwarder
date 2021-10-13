@@ -1,10 +1,8 @@
 - name: Deploy to Cloud Run
-  id: deploy
-  uses: google-github-actions/deploy-cloudrun@main
+  uses: google-github-actions/deploy-cloudrun@v0.2.0
   with:
-    service: chalupa-forwarder 
-    image: gcr.io/cloudrun/hello
+    service: ${{ env.SERVICE }}
+    image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
+    region: ${{ env.REGION }}
     credentials: ${{ secrets.GCP_SA_KEY }}
-
-- name: Use Output
-  run: curl "${{ steps.deploy.outputs.url }}"
+    env_vars: NAME="Hello World"
