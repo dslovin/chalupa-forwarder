@@ -2,7 +2,7 @@
   id: deploy
   uses: google-github-actions/deploy-cloudrun@main
   with:
-    service: hello-cloud-run 
+    service: chalupa-forwarder 
     image: gcr.io/cloudrun/hello
     credentials: ${{ secrets.GCP_SA_KEY }}
 
