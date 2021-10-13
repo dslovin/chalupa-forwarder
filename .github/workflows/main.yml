@@ -5,4 +5,4 @@
     image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}
     region: ${{ env.REGION }}
     credentials: ${{ secrets.GCP_SA_KEY }}
-    env_vars: NAME="Hello World"
+    env_vars: SERVICE="chalupa-forwarder",PROJECT_ID="ds-forwarder",REGION="US-CENTRAL1"
